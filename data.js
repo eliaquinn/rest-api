@@ -24,5 +24,11 @@ const todos = [
         description: "Enjoying the new dorama",
         completed: false,
     },
+    {
+        id: 5,
+        title: "Aprendendo Git com o Breno",
+        description: "Sei clonar reposiório agora",
+        completed: true,
+    },
 ];
 module.exports = todos;
