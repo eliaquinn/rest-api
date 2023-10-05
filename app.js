@@ -4,14 +4,14 @@ const Todo = require("./controller");
 const PORT = 5000;
 
 const server = http.createServer(async (req, res) => {
-    //set the request route
-    if (req.url === "/api" && req.method === "GET") {
-        //response headers
+    // /api/todos :GET
+    if (req.url === "/api/todos" && req.method === "GET") {
+        //get the todos
+        const todos = await new Todo().getTodos();
+        //set the status code, and content-type
         res.writeHead(200, {"Content-Type":"application/json"});
-        //set the response
-        res.write("Hello world!");
-        //end the response
-        res.end();
+        //send the data
+        res.end(JSON.stringify(todos));
     }
    //if no route present
    else {
